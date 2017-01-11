@@ -22,7 +22,7 @@ public class DataBaseConnection {
 				String driver = "com.mysql.jdbc.Driver";
 				String url = "jdbc:mysql://localhost:3306/datamouse";
 				String user = "root";
-				String password = "";
+				String password = "admin";
 				Properties prop = new Properties();
 				InputStream inputStream = DataBaseConnection.class.getClassLoader()
 						.getResourceAsStream(

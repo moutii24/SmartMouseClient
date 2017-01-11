@@ -1,59 +1,59 @@
 /**
- * WebServiceLocator.java
+ * MouseSubmitLocator.java
  *
  * This file was auto-generated from WSDL
  * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
  */
 
-package org.SubmitMouse.WebService.ACK;
+package SubmitMouse.SmartMouseServer;
 
-public class WebServiceLocator extends org.apache.axis.client.Service implements org.SubmitMouse.WebService.ACK.WebService {
+public class MouseSubmitLocator extends org.apache.axis.client.Service implements SubmitMouse.SmartMouseServer.MouseSubmit {
 
-    public WebServiceLocator() {
+    public MouseSubmitLocator() {
     }
 
 
-    public WebServiceLocator(org.apache.axis.EngineConfiguration config) {
+    public MouseSubmitLocator(org.apache.axis.EngineConfiguration config) {
         super(config);
     }
 
-    public WebServiceLocator(java.lang.String wsdlLoc, javax.xml.namespace.QName sName) throws javax.xml.rpc.ServiceException {
+    public MouseSubmitLocator(java.lang.String wsdlLoc, javax.xml.namespace.QName sName) throws javax.xml.rpc.ServiceException {
         super(wsdlLoc, sName);
     }
 
-    // Use to get a proxy class for WebServiceSoap
-    private java.lang.String WebServiceSoap_address = "http://localhost:53490/WebService.asmx";
+    // Use to get a proxy class for MouseSubmitSoap
+    private java.lang.String MouseSubmitSoap_address = "http://localhost:61158/MouseSubmit.asmx";
 
-    public java.lang.String getWebServiceSoapAddress() {
-        return WebServiceSoap_address;
+    public java.lang.String getMouseSubmitSoapAddress() {
+        return MouseSubmitSoap_address;
     }
 
     // The WSDD service name defaults to the port name.
-    private java.lang.String WebServiceSoapWSDDServiceName = "WebServiceSoap";
+    private java.lang.String MouseSubmitSoapWSDDServiceName = "MouseSubmitSoap";
 
-    public java.lang.String getWebServiceSoapWSDDServiceName() {
-        return WebServiceSoapWSDDServiceName;
+    public java.lang.String getMouseSubmitSoapWSDDServiceName() {
+        return MouseSubmitSoapWSDDServiceName;
     }
 
-    public void setWebServiceSoapWSDDServiceName(java.lang.String name) {
-        WebServiceSoapWSDDServiceName = name;
+    public void setMouseSubmitSoapWSDDServiceName(java.lang.String name) {
+        MouseSubmitSoapWSDDServiceName = name;
     }
 
-    public org.SubmitMouse.WebService.ACK.WebServiceSoap getWebServiceSoap() throws javax.xml.rpc.ServiceException {
+    public SubmitMouse.SmartMouseServer.MouseSubmitSoap getMouseSubmitSoap() throws javax.xml.rpc.ServiceException {
        java.net.URL endpoint;
         try {
-            endpoint = new java.net.URL(WebServiceSoap_address);
+            endpoint = new java.net.URL(MouseSubmitSoap_address);
         }
         catch (java.net.MalformedURLException e) {
             throw new javax.xml.rpc.ServiceException(e);
         }
-        return getWebServiceSoap(endpoint);
+        return getMouseSubmitSoap(endpoint);
     }
 
-    public org.SubmitMouse.WebService.ACK.WebServiceSoap getWebServiceSoap(java.net.URL portAddress) throws javax.xml.rpc.ServiceException {
+    public SubmitMouse.SmartMouseServer.MouseSubmitSoap getMouseSubmitSoap(java.net.URL portAddress) throws javax.xml.rpc.ServiceException {
         try {
-            org.SubmitMouse.WebService.ACK.WebServiceSoapStub _stub = new org.SubmitMouse.WebService.ACK.WebServiceSoapStub(portAddress, this);
-            _stub.setPortName(getWebServiceSoapWSDDServiceName());
+            SubmitMouse.SmartMouseServer.MouseSubmitSoapStub _stub = new SubmitMouse.SmartMouseServer.MouseSubmitSoapStub(portAddress, this);
+            _stub.setPortName(getMouseSubmitSoapWSDDServiceName());
             return _stub;
         }
         catch (org.apache.axis.AxisFault e) {
@@ -61,8 +61,8 @@ public class WebServiceLocator extends org.apache.axis.client.Service implements
         }
     }
 
-    public void setWebServiceSoapEndpointAddress(java.lang.String address) {
-        WebServiceSoap_address = address;
+    public void setMouseSubmitSoapEndpointAddress(java.lang.String address) {
+        MouseSubmitSoap_address = address;
     }
 
     /**
@@ -72,9 +72,9 @@ public class WebServiceLocator extends org.apache.axis.client.Service implements
      */
     public java.rmi.Remote getPort(Class serviceEndpointInterface) throws javax.xml.rpc.ServiceException {
         try {
-            if (org.SubmitMouse.WebService.ACK.WebServiceSoap.class.isAssignableFrom(serviceEndpointInterface)) {
-                org.SubmitMouse.WebService.ACK.WebServiceSoapStub _stub = new org.SubmitMouse.WebService.ACK.WebServiceSoapStub(new java.net.URL(WebServiceSoap_address), this);
-                _stub.setPortName(getWebServiceSoapWSDDServiceName());
+            if (SubmitMouse.SmartMouseServer.MouseSubmitSoap.class.isAssignableFrom(serviceEndpointInterface)) {
+                SubmitMouse.SmartMouseServer.MouseSubmitSoapStub _stub = new SubmitMouse.SmartMouseServer.MouseSubmitSoapStub(new java.net.URL(MouseSubmitSoap_address), this);
+                _stub.setPortName(getMouseSubmitSoapWSDDServiceName());
                 return _stub;
             }
         }
@@ -94,8 +94,8 @@ public class WebServiceLocator extends org.apache.axis.client.Service implements
             return getPort(serviceEndpointInterface);
         }
         java.lang.String inputPortName = portName.getLocalPart();
-        if ("WebServiceSoap".equals(inputPortName)) {
-            return getWebServiceSoap();
+        if ("MouseSubmitSoap".equals(inputPortName)) {
+            return getMouseSubmitSoap();
         }
         else  {
             java.rmi.Remote _stub = getPort(serviceEndpointInterface);
@@ -105,7 +105,7 @@ public class WebServiceLocator extends org.apache.axis.client.Service implements
     }
 
     public javax.xml.namespace.QName getServiceName() {
-        return new javax.xml.namespace.QName("http://ACK.WebService.SubmitMouse.org/", "WebService");
+        return new javax.xml.namespace.QName("SmartMouseServer.SubmitMouse", "MouseSubmit");
     }
 
     private java.util.HashSet ports = null;
@@ -113,7 +113,7 @@ public class WebServiceLocator extends org.apache.axis.client.Service implements
     public java.util.Iterator getPorts() {
         if (ports == null) {
             ports = new java.util.HashSet();
-            ports.add(new javax.xml.namespace.QName("http://ACK.WebService.SubmitMouse.org/", "WebServiceSoap"));
+            ports.add(new javax.xml.namespace.QName("SmartMouseServer.SubmitMouse", "MouseSubmitSoap"));
         }
         return ports.iterator();
     }
@@ -123,8 +123,8 @@ public class WebServiceLocator extends org.apache.axis.client.Service implements
     */
     public void setEndpointAddress(java.lang.String portName, java.lang.String address) throws javax.xml.rpc.ServiceException {
         
-if ("WebServiceSoap".equals(portName)) {
-            setWebServiceSoapEndpointAddress(address);
+if ("MouseSubmitSoap".equals(portName)) {
+            setMouseSubmitSoapEndpointAddress(address);
         }
         else 
 { // Unknown Port Name

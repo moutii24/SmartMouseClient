@@ -1,54 +1,64 @@
 package Services;
 
-import java.beans.Statement;
 import java.io.FileWriter;
-
-import DataBase.DataBaseConnection;
-import java.sql.*;
 import java.util.*;
 
 import javax.jws.WebMethod;
 import javax.jws.WebService;
 import javax.management.PersistentMBean;
 
+import DataBase.*;
+import Services.Mesures;
+import com.mysql.fabric.xmlrpc.base.Array;
 
-
+import java.sql.*;
+@WebService
 public class DumpMesruses {
+	public Mesures[] mesuresTab ;
 	Connection connection;
-	//DumpedData[] dataListe;
-
-	public DumpMesruses(){};
 	
-	public ArrayList<DumpedData> DumpDataLocalDB(){
-		ArrayList<DumpedData> dataListe = new ArrayList<DumpedData>();
+	
+	
+	public DumpMesruses() {
+	};
+	
+	public Mesures[] DumpDataDB(){
 		
 		try {
-			connection= DataBaseConnection.getConnection();
-			String sql="SELECT * FROM datavalues";
+			connection = DataBaseConnection.getConnection();
+			String sql = "SELECT * FROM datavalues;";
 			PreparedStatement pst = connection.prepareStatement(sql);
-			ResultSet rs = pst.executeQuery();
 			
-			while(rs.next()){
-				DumpedData ligneTable = new DumpedData();
-				ligneTable.setMesureDumpedID(rs.getInt(1));
-				ligneTable.setdCondValue(rs.getInt(2));
-				ligneTable.setdTempValue(rs.getInt(3));
-				ligneTable.setMesureDumpedDate(rs.getString(4));
-				dataListe.add(ligneTable);
-                }
+			ResultSet rt = pst.executeQuery(sql);
+			int i = 0;
+			int len = 0;
+			for(i=0; rt.next();i++){
+				len++;
+			}
+			rt.close();
+			ResultSet rs = pst.executeQuery(sql);
+			mesuresTab = new Mesures[len];
+			for(i=0; rs.next();i++){
+				mesuresTab[i] = new Mesures();
+				int id = rs.getInt("mesureID");
+				mesuresTab[i].setMesureID(id);
+/*				mesuresTab.setMesureID(rs.getInt("mesureID"));
+				mesuresTab.setCondValue(rs.getInt("condValue"));
+				mesuresTab.setTempValue(rs.getInt("tempValue"));
+				mesuresTab.setMesureDate(rs.getString("mesureDate"));*/
+				
+				System.out.println(/*rs.getInt("mesureID")*/id);
+			}
+
 			
-		} catch (Exception e) {
-			// TODO: handle exception
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-		return dataListe;
+
+		
+		
+		return mesuresTab;
 	}
-	
-	
-	
-	
-	
-	
+
 }
-
-
-

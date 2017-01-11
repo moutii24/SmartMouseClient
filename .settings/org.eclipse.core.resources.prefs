@@ -1,5 +1,5 @@
 eclipse.preferences.version=1
-encoding//src/org/SubmitMouse/WebService/ACK/WebService.java=UTF-8
-encoding//src/org/SubmitMouse/WebService/ACK/WebServiceLocator.java=UTF-8
-encoding//src/org/SubmitMouse/WebService/ACK/WebServiceSoap.java=UTF-8
-encoding//src/org/SubmitMouse/WebService/ACK/WebServiceSoapStub.java=UTF-8
+encoding//src/SubmitMouse/SmartMouseServer/MouseSubmit.java=UTF-8
+encoding//src/SubmitMouse/SmartMouseServer/MouseSubmitLocator.java=UTF-8
+encoding//src/SubmitMouse/SmartMouseServer/MouseSubmitSoap.java=UTF-8
+encoding//src/SubmitMouse/SmartMouseServer/MouseSubmitSoapStub.java=UTF-8

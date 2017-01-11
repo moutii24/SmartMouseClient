@@ -21,18 +21,18 @@ import javax.jws.WebService;
  */
 @WebService
 public class Requester implements IRequester {
-	String mouseNumber = "M00002";
+	String mouseNumber = "M00001";
 	MouseInformations mouse = new MouseInformations();
 
 	@WebMethod
 	public MouseInformations SubmitMouse() {
-		mouse.setIDmouse(mouseNumber);
+		mouse.setID(mouseNumber);
 		DateTimeFormatter dtf = DateTimeFormatter
 				.ofPattern("yyyy/MM/dd HH:mm:ss");
 		LocalDateTime now = LocalDateTime.now();
-		mouse.setDateConnection(dtf.format(now));
-		mouse.setIPuser("127.0.0.1");
-		System.out.println(mouse.getIPuser());
+		mouse.setConnectionDate(dtf.format(now));
+		mouse.setUserIP("127.0.0.1");
+
 		return mouse;
 	}
 }
