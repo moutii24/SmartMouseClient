@@ -1,17 +1,18 @@
 package Services;
 
 public class Mesures {
-	private int mesID;
+	private String mouseNumber = "M00010";
+	
 	private int condValue;
 	private int tempValue;
 	private String mesureDate;
 	
-	public int getMesureID() {
-		return mesID;
+	
+	
+	public String getMouseNumber() {
+		return mouseNumber;
 	}
-	public void setMesureID(int mesureID) {
-		this.mesID = mesureID;
-	}
+	
 	public int getCondValue() {
 		return condValue;
 	}

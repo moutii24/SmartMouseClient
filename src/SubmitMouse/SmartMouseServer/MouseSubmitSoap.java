@@ -8,5 +8,6 @@
 package SubmitMouse.SmartMouseServer;
 
 public interface MouseSubmitSoap extends java.rmi.Remote {
-    public java.lang.String submitMouse() throws java.rmi.RemoteException;
+    public int dumpData() throws java.rmi.RemoteException;
+    public boolean submitMouse() throws java.rmi.RemoteException;
 }

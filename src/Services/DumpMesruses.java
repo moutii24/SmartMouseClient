@@ -22,6 +22,7 @@ public class DumpMesruses {
 	public DumpMesruses() {
 	};
 	
+	@WebMethod
 	public Mesures[] DumpDataDB(){
 		
 		try {
@@ -40,14 +41,12 @@ public class DumpMesruses {
 			mesuresTab = new Mesures[len];
 			for(i=0; rs.next();i++){
 				mesuresTab[i] = new Mesures();
-				int id = rs.getInt("mesureID");
-				mesuresTab[i].setMesureID(id);
-/*				mesuresTab.setMesureID(rs.getInt("mesureID"));
-				mesuresTab.setCondValue(rs.getInt("condValue"));
-				mesuresTab.setTempValue(rs.getInt("tempValue"));
-				mesuresTab.setMesureDate(rs.getString("mesureDate"));*/
 				
-				System.out.println(/*rs.getInt("mesureID")*/id);
+				mesuresTab[i].setCondValue(rs.getInt("condValue"));
+				mesuresTab[i].setTempValue(rs.getInt("tempValue"));
+				mesuresTab[i].setMesureDate(rs.getString("mesureDate"));
+				
+				//System.out.println(/*rs.getInt("mesureID")*/mesuresTab[i].getMesureID());
 			}
 
 			

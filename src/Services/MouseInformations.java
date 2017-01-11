@@ -5,7 +5,8 @@ public class MouseInformations {
 	public String IDmouse;
 	public String dateConnection;
 	public String IPuser;
-
+	
+	
 	public void setID(String iD) {
 		IDmouse = iD;
 	}

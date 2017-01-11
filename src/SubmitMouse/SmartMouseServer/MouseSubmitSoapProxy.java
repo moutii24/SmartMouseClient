@@ -44,7 +44,13 @@ public class MouseSubmitSoapProxy implements SubmitMouse.SmartMouseServer.MouseS
     return mouseSubmitSoap;
   }
   
-  public java.lang.String submitMouse() throws java.rmi.RemoteException{
+  public int dumpData() throws java.rmi.RemoteException{
+    if (mouseSubmitSoap == null)
+      _initMouseSubmitSoapProxy();
+    return mouseSubmitSoap.dumpData();
+  }
+  
+  public boolean submitMouse() throws java.rmi.RemoteException{
     if (mouseSubmitSoap == null)
       _initMouseSubmitSoapProxy();
     return mouseSubmitSoap.submitMouse();
