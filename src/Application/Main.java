@@ -18,8 +18,8 @@ public class Main {
 			// TODO Auto-generated catch block
 			System.out.println("Port déja utilisé ...");
 		}
-		//MouseSubmitSoapProxy ws = new MouseSubmitSoapProxy();
-		//System.out.println(ws.submitMouse());
+		MouseSubmitSoapProxy ws = new MouseSubmitSoapProxy();
+		System.out.println(ws.submitMouse());
 		DumpMesruses dp = new DumpMesruses();
 		dp.DumpDataDB();
 		for(int i=0; i<dp.DumpDataDB().length;i++){
@@ -32,7 +32,7 @@ public class Main {
 			// TODO Auto-generated catch block
 			System.out.println("Port déja utilisé ...");
 		}
-		//MouseSubmitSoapProxy ws2 = new MouseSubmitSoapProxy();
-		//System.out.println(ws2.dumpData());
+		
+		System.out.println(ws.dumpData());
 	}
 }

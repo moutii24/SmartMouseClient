@@ -1,7 +1,7 @@
 package Services;
 
 public class Mesures {
-	private String mouseNumber = "M00010";
+	public String mouseNumber = "M00017";
 	
 	private int condValue;
 	private int tempValue;
